@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.bod-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.player-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player-move {
+    display: flex;
+    color: white;
+    background: gray;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
