@@ -1,12 +1,10 @@
 const CHOICES = [0, 1, 2];
 //rock paper scissors
-
+let playerWin = 0;
+let cpuWin = 0;
 
 function getChoice() {
-    let tempChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)];
-    console.log(tempChoice);
-    return tempChoice;
-    // https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
+    return CHOICES[Math.floor(Math.random() * CHOICES.length)];
 }
 
 function singleRound(player, cpu) {
@@ -32,80 +30,72 @@ function singleRound(player, cpu) {
 
 // ----------
  
-const rockBtn = document.querySelector('.rock');
-const paperBtn = document.querySelector('.paper');
-const scissorBtn = document.querySelector('.scissor');
+
 
 const playerDisplay = document.querySelector('#player-move');
 const cpuDisplay = document.querySelector('#cpu-move');
 
 
+function convertChoice (choice) {
+    switch(choice) {
+        case "rock":
+            return 0;
+        case "paper":
+            return 1;
+        case "scissor":
+            return 2;
+    }
+}
+
+function convertNumToMove (choice) {
+    switch(choice) {
+        case 0:
+            return "Rock";
+        case 1:
+            return "Paper";
+        case 2:
+            return "Scissors";
+    }
+}
+
+// Updates ul
+function addItem(result){
+        var li = document.createElement("LI");  
+        li.innerHTML = result;
+        liHist.appendChild(li);
+}
+
+
+
+//</script><input type="button" id="btnAdd" value="Add" onclick="addItem()">
+
 
 //const playerChoice = document.querySelector('.player-points');
 let playerChoice = 0;
 let cpuChoice = getChoice();
-
-function changeRock () {
-    playerDisplay.innerHTML = "ROCK";
-    //cpuDisplay.innerHTML = "adsdsaasads";
-    updateMove(cpuDisplay, cpuChoice);
-    document.querySelector('.player-points').innerHTML = "Rock";
-    playerChoice = 0;
-    cpuChoice = getChoice();
-    updateMove(cpuDisplay, 'asdasdsadasdadadadssad');
-}
-
-function changePaper () {
-    playerDisplay.innerHTML = "PAPER 📜";
-    document.querySelector('.player-points').innerHTML = "Paper";
-    playerChoice = 1;
-    updateMove(cpuDisplay, cpuChoice);
-}
-
-function changeScissor () {
-    playerDisplay.innerHTML = "SCISSOR ✂";
-    document.querySelector('.player-points').innerHTML = "SCISSOR";
-    playerChoice = 2;
-    updateMove(cpuDisplay, cpuChoice);
-
-}
-
-function updateMove (asdf, newMove) {
-    //document.querySelector(imgWindow).innerHTML = newMove;
-    asdf.innerHTML = newMove;
-}
-
-
-//const audio = document.querySelector(`button[class="${e.keyCode}"]`);
-
-
-// rockBtn.addEventListener('click', changeRock);
-// paperBtn.addEventListener('click', changePaper);
-// scissorBtn.addEventListener('click', changeScissor);
+let liHist = document.querySelector("#li-hist");
 
 // --------------
-// buttons is a node list. It looks and acts much like an array.
 const buttons = document.querySelectorAll('button');
 
-// we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
-
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
     document.querySelector('#player-move').innerHTML = button.id;
+
     cpuChoice = getChoice();
-    document.querySelector("#cpu-move").innerHTML = cpuChoice;
+    document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
+
+    playerMove = convertChoice(button.id);
+    let temp = singleRound(playerMove, cpuChoice);
+    addItem(temp);
+
+    docuemnt.querySelector('.player-points').innerHTML = "asdadsas";
   });
 });
 
 
-// rockBtn.addEventListener('click', function (e) {
-//     e.target.style.background = 'blue';
-//     document.playerDisplay.innerHTML = "ROCK";
-//     alert("hi");
-//   });
-  
-  //document.getElementById("content").innerHTML = "whatever";
 
-  // var myDiv = document.getElementById("divId");
-  // myDiv.innerHTML = "Content To Show";
+
+//const audio = document.querySelector(`button[class="${e.keyCode}"]`);
+

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+ul, li {
+    list-style: none;
+}
+
 body {
     flex-direction: column;
     align-items: center;
@@ -25,7 +29,13 @@ header {
     align-items: center;
 }
 
-#player-move {
+.cpu-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player-move, #cpu-move {
     display: flex;
     color: white;
     background: gray;
@@ -33,4 +43,10 @@ header {
     align-items: center;
     height: 200px;
     width: 200px;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
 }
