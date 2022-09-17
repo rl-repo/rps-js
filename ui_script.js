@@ -27,14 +27,10 @@ function singleRound(player, cpu) {
     }
 }
 
-
 // ----------
- 
-
 
 const playerDisplay = document.querySelector('#player-move');
 const cpuDisplay = document.querySelector('#cpu-move');
-
 
 function convertChoice (choice) {
     switch(choice) {
@@ -65,17 +61,12 @@ function addItem(result){
         liHist.appendChild(li);
 }
 
-
-
 //</script><input type="button" id="btnAdd" value="Add" onclick="addItem()">
-
 
 //const playerChoice = document.querySelector('.player-points');
 let playerChoice = 0;
 let cpuChoice = getChoice();
 let liHist = document.querySelector("#li-hist");
-
-// let playerPoint = 
 
 // --------------
 const buttons = document.querySelectorAll('button');
