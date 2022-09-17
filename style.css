@@ -1,7 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 ul, li {
@@ -9,13 +8,29 @@ ul, li {
 }
 
 body {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #ddcecd;
+    
 }
 
-header {
+.header {
     display: flex;
     justify-content: center;
+    background-color: #19647E;
+    color: white;
+    font-size: 45px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+button {
+    background-color: #28AFB0;
+    color: white;
+    padding: 2px;
+    margin: 10px;
 }
 
 .bod-wrapper {
@@ -23,13 +38,7 @@ header {
     justify-content: space-around;
 }
 
-.player-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cpu-side {
+.player-side, .cpu-side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,4 +58,17 @@ header {
     display: flex;
     justify-content: space-around;
     margin: 10px;
+}
+
+
+#match-hist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    background-color: #19647E;
+    height: 30px;
+    margin-top: auto;
 }

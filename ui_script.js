@@ -75,6 +75,8 @@ let playerChoice = 0;
 let cpuChoice = getChoice();
 let liHist = document.querySelector("#li-hist");
 
+// let playerPoint = 
+
 // --------------
 const buttons = document.querySelectorAll('button');
 
@@ -90,7 +92,8 @@ buttons.forEach((button) => {
     let temp = singleRound(playerMove, cpuChoice);
     addItem(temp);
 
-    docuemnt.querySelector('.player-points').innerHTML = "asdadsas";
+    document.querySelector("#player-points").innerHTML = playerWin;
+    document.querySelector("#CPU-points").innerHTML = cpuWin;
   });
 });
 
