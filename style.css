@@ -16,6 +16,10 @@ body {
     
 }
 
+img {  
+    object-fit: cover;  
+}  
+
 .header {
     display: flex;
     justify-content: center;
@@ -47,7 +51,7 @@ button {
 #player-move, #cpu-move {
     display: flex;
     color: white;
-    background: gray;
+    background: green;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -72,3 +76,7 @@ button {
     height: 30px;
     margin-top: auto;
 }
+
+.hidden {
+    opacity: 0;
+  }

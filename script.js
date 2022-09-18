@@ -5,19 +5,6 @@ function getChoice() {
     // https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 }
 
-// function getPlayerChoice() {
-//     let playerChoice = prompt("Please choose your move (rock, paper, or, scissors)", " ");
-//     playerChoice = playerChoice.toLowerCase();
-//     switch (playerChoice) {
-//         case "rock":
-//             return 0;
-//         case "paper":
-//             return 1;
-//         case "scisscors":
-//             return 2;
-//     }
-// }
-
 function singleRound(player, cpu) {
     if (player >= 3 || player < 0) { 
         return "Invalid choice." 
