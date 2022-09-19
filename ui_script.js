@@ -71,18 +71,16 @@ let liHist = document.querySelector("#li-hist");
 
 
 
-function show(move) {
- 
-    /* Access image by id and change
-    the display property to block*/
-    document.getElementById(`${move}_img`)
-            .style.display = "block";
-
-    document.getElementById(move)
-            .style.display = "none";
-}
-
-
+function toggle(button) {
+    if (button.id == "tempRock") {
+        console.log("tempRock")
+    }
+    console.log(button);
+    button.parentElement.classList.toggle('hidden'); 
+    //Adds hidden class, and on click enables css
+  }
+  
+  
 // --------------
 const buttons = document.querySelectorAll('button');
 
@@ -91,9 +89,8 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     // Changes filler text
     document.querySelector('#player-move').innerHTML = button.id;
-    //hideImg(`${buttID}_img`);
-    console.log(button.id)
-    show(button.id);
+    let tempImg = document.querySelector("#`${button.id}_img`");
+    console.log(`#${button.id}_img`);
     cpuChoice = getChoice();
     document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
 
