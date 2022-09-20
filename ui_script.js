@@ -112,9 +112,9 @@ tempButton.addEventListener('click', function() {
         x1.style.display = "block";
         x2.style.display = "none";
         x3.style.display = "none";
-    } else {
-        x1.style.display = "none";
-    }
+    } //else {
+       // x1.style.display = "none";
+   // }
 });
 
 
@@ -124,9 +124,9 @@ tempButton2.addEventListener('click', function() {
         x1.style.display = "none";
         x2.style.display = "block";
         x3.style.display = "none";
-    } else {
-        x2.style.display = "none";
-    }
+    } //else {
+        //x2.style.display = "none";
+   // }
 });
 
 let tempButton3 = document.getElementById("scissor");
@@ -135,9 +135,9 @@ tempButton3.addEventListener('click', function() {
         x1.style.display = "none";
         x2.style.display = "none";
         x3.style.display = "block";
-    } else {
-        x3.style.display = "none";
-    }
+    } //else {
+        //x3.style.display = "none";
+    //}
 });
 
 // --------------
@@ -147,12 +147,9 @@ buttons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
     // Changes filler text
-    document.querySelector('#player-move').innerHTML = button.id;
+    //document.querySelector('#player-move').innerHTML = button.id;
 
-    //getImg(button.id);
-    //console.log("Button clicked: " + button.id);
-
-    //let tempImg = document.querySelector(`#${button.id}_img`);
+//    let tempImg = document.querySelector(`#${button.id}_img`);
     //tempImg.classList.toggle('hidden');
 
     //console.log(`#${button.id}_img`);
