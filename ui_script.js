@@ -71,16 +71,75 @@ let liHist = document.querySelector("#li-hist");
 
 
 
-function toggle(button) {
-    if (button.id == "tempRock") {
-        console.log("tempRock")
+// function toggle(button) {
+//     if (button.id == "tempRock") {
+//         console.log("tempRock")
+//     }
+//     console.log(button);
+//     button.parentElement.classList.toggle('hidden'); 
+//     //Adds hidden class, and on click enables css
+//   }
+  
+
+
+function getImg(move) {
+    const rock = document.getElementById("rock_img");
+    const paper = document.getElementById("paper_img");
+    const scissor = document.getElementById("scissor_img");
+    switch(move) {
+        case "rock":
+            return[paper.style.display = "none", 
+            scissors.style.display = "none", 
+            rock.style.display = "flex"];
+
+            //return rock.style.display = "flex";
+        case "paper":
+            return [paper.style.display = "flex", 
+            scissors.style.display = "none", 
+            rock.style.display = "none"];
+        case "scissor":
+           return scissor.style.display = "flex";
+        }
+}
+
+var x1 = document.getElementById("rock_img");
+var x2 = document.getElementById("paper_img");
+var x3 = document.getElementById("scissor_img");
+
+let tempButton = document.getElementById("rock");
+tempButton.addEventListener('click', function() {
+    if (x1.style.display == "none") {
+        x1.style.display = "block";
+        x2.style.display = "none";
+        x3.style.display = "none";
+    } else {
+        x1.style.display = "none";
     }
-    console.log(button);
-    button.parentElement.classList.toggle('hidden'); 
-    //Adds hidden class, and on click enables css
-  }
-  
-  
+});
+
+
+let tempButton2 = document.getElementById("paper");
+tempButton2.addEventListener('click', function() {
+    if (x2.style.display == "none") {
+        x1.style.display = "none";
+        x2.style.display = "block";
+        x3.style.display = "none";
+    } else {
+        x2.style.display = "none";
+    }
+});
+
+let tempButton3 = document.getElementById("scissor");
+tempButton3.addEventListener('click', function() {
+    if (x3.style.display == "none") {
+        x1.style.display = "none";
+        x2.style.display = "none";
+        x3.style.display = "block";
+    } else {
+        x3.style.display = "none";
+    }
+});
+
 // --------------
 const buttons = document.querySelectorAll('button');
 
@@ -89,8 +148,14 @@ buttons.forEach((button) => {
   button.addEventListener('click', () => {
     // Changes filler text
     document.querySelector('#player-move').innerHTML = button.id;
-    let tempImg = document.querySelector("#`${button.id}_img`");
-    console.log(`#${button.id}_img`);
+
+    //getImg(button.id);
+    //console.log("Button clicked: " + button.id);
+
+    //let tempImg = document.querySelector(`#${button.id}_img`);
+    //tempImg.classList.toggle('hidden');
+
+    //console.log(`#${button.id}_img`);
     cpuChoice = getChoice();
     document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
 
@@ -102,6 +167,14 @@ buttons.forEach((button) => {
     document.querySelector("#CPU-points").innerHTML = cpuWin;
   });
 });
+
+
+// const rockButton = document.querySelector('.buttons #rock');
+// rockButton.addEventListener('click', () => {
+//     console.log("clicked");
+
+// });
+
 
 
 

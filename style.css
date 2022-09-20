@@ -16,10 +16,6 @@ body {
     
 }
 
-img {  
-    object-fit: cover;  
-}  
-
 .header {
     display: flex;
     justify-content: center;
@@ -51,7 +47,7 @@ button {
 #player-move, #cpu-move {
     display: flex;
     color: white;
-    background: green;
+    background: red;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -80,7 +76,7 @@ button {
 
   /* ---------- */
 
-.player-moves {
+/* .player-moves {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,10 +99,13 @@ button {
     box-shadow: 0.25em 0.25em #EEE;
 }
 
-  /* ---------- */
+  ---------- */
 
-#player-moves img {
-    max-width: 40%;
-    height: auto;
+#player-move .show {
+    display: flex;
+    width: 75%;
+}
 
+#player-move .hidden{
+    display: none;
 }
