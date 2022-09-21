@@ -13,3 +13,4 @@ Rock-Paper-Scissors game based off The Odin Project guidelines.
 - [Pesudo-Choice](https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array)
 - [Colors](https://coolors.co/37392e-19647e-28afb0-ddcecd)
 - Scissors by Cristiano Zoucas from <a href="https://thenounproject.com/browse/icons/term/scissors/" target="_blank" title="Scissors Icons">Noun Project</a>
+- [Class Toggle (for future)](https://www.w3schools.com/howto/howto_js_toggle_class.asp)
