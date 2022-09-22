@@ -135,28 +135,32 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   // and for each one we add a 'click' listener
+
   button.addEventListener('click', () => {
+    if (cpuWin + playerWin >= 5) {
+        console.log("No more games");
+      }
     cpuChoice = getChoice();
     cpuChoice2 = convertNumToMove(cpuChoice);
-    if (cpuChoice2 == "rock"){
-        c1.style.display = "block";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        console.log("ROCK IF");
-    } else if (cpuChoice2 == "paper"){
-        c1.style.display = "none";
-        c2.style.display = "block";
-        c3.style.display = "none";
-        console.log("PAPER IF");
-        document.querySelector("#cpu-move").innerHTML = cpuChoice;
-    } else if (cpuChoice2 == "scissor"){
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "block";
-        console.log("SCISSOR IF");
-        document.querySelector("#cpu-move").innerHTML = cpuChoice;
-    }
-    //document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
+    // if (cpuChoice2 == "rock"){
+    //     c1.style.display = "block";
+    //     c2.style.display = "none";
+    //     c3.style.display = "none";
+    //     console.log("ROCK IF");
+    // } else if (cpuChoice2 == "paper"){
+    //     c1.style.display = "none";
+    //     c2.style.display = "block";
+    //     c3.style.display = "none";
+    //     console.log("PAPER IF");
+    //     document.querySelector("#cpu-move").innerHTML = cpuChoice;
+    // } else if (cpuChoice2 == "scissor"){
+    //     c1.style.display = "none";
+    //     c2.style.display = "none";
+    //     c3.style.display = "block";
+    //     console.log("SCISSOR IF");
+    //     document.querySelector("#cpu-move").innerHTML = cpuChoice;
+    // }
+    document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
 
     //getCpuImg(cpuChoice);
     playerMove = convertChoice(button.id);
