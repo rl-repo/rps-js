@@ -13,21 +13,18 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="header">Javascript Rock-Paper-Scissors</div>
+        <div class="header"> Rock-Paper-Scissors</div>
 
         <div class="bod-wrapper">
             <div class="player-side">
                 <p>Player</p>
-
-
                 <div id="player-move">
-                    <img id="rock_img" src="img/rock.png" style="display: none"/>
-                    <img id="paper_img" src="img/paper.png" style="display: none"/>
-                    <img id="scissor_img" src="img/scissors.png" style="display: none"/>
+                    <img id="rock_img" src="img/rock.png" style="display: none; width: 75%;"/>
+                    <img id="paper_img" src="img/paper.png" style="display: none; width: 75%"/>
+                    <img id="scissor_img" src="img/scissors.png" style="display: none; width: 75%"/>
                 </div>
 
                 <div class="buttons">
-
                     <button class="rock" id="rock">[Rock]</button>
                     <button class="paper" id="paper">[Paper]</button>
                     <button class="scissor" id="scissor">[Scissors]</button>
@@ -37,23 +34,24 @@
 
             <div class="cpu-side">
                 <p>CPU</p>
-                <div id="cpu-move">[FILLER]</div>
+                <div id="cpu-move">
+                    <img id="cpu_rock_img" src="img/rock.png" style="display: none; width: 75%;"/>
+                    <img id="cpu_paper_img" src="img/paper.png" style="display: none; width: 75%"/>
+                    <img id="cpu_scissor_img" src="img/scissors.png" style="display: none; width: 75%"/>
+                </div>
             </div>
         </div>
 
         <div class="score">
             <div class="player-score">
-                <div>Player: </div>
+                <div>Player</div>
                 <p id="player-points">0</p>
             </div>
 
-            
             <div class="cpu-score-cont">
-                <div>CPU: </div>
+                <div>CPU</div>
                 <p id="CPU-points">0</p>
             </div>
-
-
         </div>
 
         <div id="match-hist">
@@ -64,7 +62,7 @@
         </div>
 
         <div class="footer"></div>
-
+        
         <script src="ui_script.js"></script>
 
 

@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif; 
 }
 
 ul, li {
@@ -10,10 +10,8 @@ ul, li {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 10px;
     background-color: #ddcecd;
-    
 }
 
 .header {
@@ -31,6 +29,7 @@ button {
     color: white;
     padding: 2px;
     margin: 10px;
+    border-radius: 8px;
 }
 
 .bod-wrapper {
@@ -46,12 +45,17 @@ button {
 
 #player-move, #cpu-move {
     display: flex;
-    color: white;
-    background: red;
+    color: black;
+    background: white;
     justify-content: center;
     align-items: center;
     height: 200px;
     width: 200px;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 16px;
 }
 
 .score {
@@ -60,52 +64,30 @@ button {
     margin: 10px;
 }
 
+.player-score, .cpu-score-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #match-hist {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+#match-hist p {
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: underline;
 }
 
 .footer {
     background-color: #19647E;
     height: 30px;
     margin-top: auto;
-}
-
-
-  /* ---------- */
-
-/* .player-moves {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.player-moves img {
-    max-width: 40%;
-    height: auto;
-}
-
-
-.player-moves.hidden img {
-    display: none;
-}
-
-.player-movesimg {
-    width: 100px;
-    height: 100px;
-    margin-top: 1em;
-    box-shadow: 0.25em 0.25em #EEE;
-}
-
-  ---------- */
-
-#player-move .show {
-    display: flex;
-    width: 75%;
-}
-
-#player-move .hidden{
-    display: none;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }

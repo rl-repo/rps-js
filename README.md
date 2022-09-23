@@ -16,6 +16,7 @@ Rock-Paper-Scissors game based off The Odin Project guidelines.
 - [Class Toggle (for future)](https://www.w3schools.com/howto/howto_js_toggle_class.asp)
 - [Font Generator](https://www.cssfontstack.com/)
 - [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
+
 ```js
 //    let tempImg = document.querySelector(`#${button.id}_img`);
 ```
