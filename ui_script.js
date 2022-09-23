@@ -29,9 +29,6 @@ function singleRound(player, cpu) {
 
 // ----------
 
-const playerDisplay = document.querySelector('#player-move');
-const cpuDisplay = document.querySelector('#cpu-move');
-
 function convertChoice (choice) {
     switch(choice) {
         case "rock":
@@ -43,14 +40,16 @@ function convertChoice (choice) {
     }
 }
 
+// ----------
+
 function convertNumToMove (choice) {
     switch(choice) {
         case 0:
-            return "Rock";
+            return "rock";
         case 1:
-            return "Paper";
+            return "paper";
         case 2:
-            return "Scissors";
+            return "scissor";
     }
 }
 
@@ -61,13 +60,46 @@ function addItem(result){
         liHist.appendChild(li);
 }
 
-//</script><input type="button" id="btnAdd" value="Add" onclick="addItem()">
 
 //const playerChoice = document.querySelector('.player-points');
 let playerChoice = 0;
 let cpuChoice = getChoice();
+
+const playerDisplay = document.querySelector('#player-move');
+const cpuDisplay = document.querySelector('#cpu-move');
+
+
 let liHist = document.querySelector("#li-hist");
 
+// -----
+var c1 = document.getElementById("cpu_rock_img");
+var c2 = document.getElementById("cpu_paper_img");
+var c3 = document.getElementById("cpu_scissor_img");
+
+function changeCpuImg (move){
+    if (move == "rock"){
+        if (c1.style.display == "none") {
+            c1.style.display = "block";
+            c2.style.display = "none";
+            c3.style.display = "none";
+        }
+    } else if (move == "paper"){
+        if (c2.style.display == "none") {
+            c1.style.display = "none";
+            c2.style.display = "block";
+            c3.style.display = "none";
+        } 
+    } else {
+        if (c3.style.display == "none") {
+            c1.style.display = "none";
+            c2.style.display = "none";
+            c3.style.display = "block";
+        } 
+    }
+}
+
+
+// Simplify this
 var x1 = document.getElementById("rock_img");
 var x2 = document.getElementById("paper_img");
 var x3 = document.getElementById("scissor_img");
@@ -80,7 +112,6 @@ tempButton.addEventListener('click', function() {
         x3.style.display = "none";
     }
 });
-
 
 let tempButton2 = document.getElementById("paper");
 tempButton2.addEventListener('click', function() {
@@ -97,72 +128,28 @@ tempButton3.addEventListener('click', function() {
         x1.style.display = "none";
         x2.style.display = "none";
         x3.style.display = "block";
-    } 
+    }
 });
 
-// --------------
-
-var c1 = document.getElementById("cpu_rock_img");
-var c2 = document.getElementById("cpu_paper_img");
-var c3 = document.getElementById("cpu_scissor_img");
-
-function getCpuImg(move) {
-    if (move == "rock"){
-        c1.style.display = "block";
-        c2.style.display = "none";
-        c3.style.display = "none";
-        document.querySelector("#cpu-move").innerHTML = convertNumToMove(move);
-    }
-    if (move == "paper"){
-        c1.style.display = "none";
-        c2.style.display = "block";
-        c3.style.display = "none";
-        
-        document.querySelector("#cpu-move").innerHTML = convertNumToMove(move);
-    }
-    if (move == "scissor"){
-        c1.style.display = "none";
-        c2.style.display = "none";
-        c3.style.display = "block";
-        document.querySelector("#cpu-move").innerHTML = convertNumToMove(move);
-    }
-    
-    return 0;
-}
 
 // --------------
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-  // and for each one we add a 'click' listener
-
   button.addEventListener('click', () => {
-    if (cpuWin + playerWin >= 5) {
-        console.log("No more games");
-      }
+    
+    if (cpuWin + playerWin == 5) {
+        alert("No more games");
+        tempButton1.disabled = true;
+        tempButton2.disabled = true;
+        tempButton3.disabled = true;
+    }
+
+
     cpuChoice = getChoice();
     cpuChoice2 = convertNumToMove(cpuChoice);
-    // if (cpuChoice2 == "rock"){
-    //     c1.style.display = "block";
-    //     c2.style.display = "none";
-    //     c3.style.display = "none";
-    //     console.log("ROCK IF");
-    // } else if (cpuChoice2 == "paper"){
-    //     c1.style.display = "none";
-    //     c2.style.display = "block";
-    //     c3.style.display = "none";
-    //     console.log("PAPER IF");
-    //     document.querySelector("#cpu-move").innerHTML = cpuChoice;
-    // } else if (cpuChoice2 == "scissor"){
-    //     c1.style.display = "none";
-    //     c2.style.display = "none";
-    //     c3.style.display = "block";
-    //     console.log("SCISSOR IF");
-    //     document.querySelector("#cpu-move").innerHTML = cpuChoice;
-    // }
-    document.querySelector("#cpu-move").innerHTML = convertNumToMove(cpuChoice);
+    changeCpuImg(cpuChoice2);
 
-    //getCpuImg(cpuChoice);
     playerMove = convertChoice(button.id);
     let temp = singleRound(playerMove, cpuChoice);
     addItem(temp);
